@@ -14,7 +14,7 @@ class SimulationRunner:
             if VisualizeSimulation:
                 print(f"Player {env.current_player} placed in column {action}")
                 env.print_board()
-        print(f"Game result: {env.game_status}")        
+        print(f"Game result: {env.game_status} wins!")        
         return env.game_status
     
     def run_trials(Robots, trials, visualizeSimulation):

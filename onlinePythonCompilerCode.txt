@@ -213,7 +213,7 @@ class SimulationRunner:
             if VisualizeSimulation:
                 print(f"Player {env.current_player} placed in column {action}")
                 env.print_board()
-        print(f"Game result: {env.game_status}")        
+        print(f"Game result: {env.game_status} wins!")        
         return env.game_status
     
     def run_trials(Robots, trials):
@@ -225,9 +225,14 @@ class SimulationRunner:
 
 
 
-#Example Simulation:
+#---------Running Simulation with Visualization:
 
-Robots = { Status.YELLOW: StudentRobot(), Status.RED: RandomRobot() }
-#SimulationRunner.run(Robots, VisualizeSimulation=True)
-results = SimulationRunner.run_trials(Robots, 100)
-print(f"Wins: {results[Status.YELLOW]} Losses: {results[Status.RED]} Draws: {results[Status.DRAW]}")
+SimulationRunner.run( { Status.YELLOW: StudentRobot(), Status.RED: RandomRobot() } , VisualizeSimulation=True)
+
+
+
+#---------Running Simulation with Trials:
+
+#Robots = { Status.YELLOW: StudentRobot(), Status.RED: RandomRobot() }
+#results = SimulationRunner.run_trials(Robots, 100)
+#print(f"Wins: {results[Status.YELLOW]} Losses: {results[Status.RED]} Draws: {results[Status.DRAW]}")
